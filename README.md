@@ -79,3 +79,74 @@ void activitySelection(vector<Activity> &activities) {
     }
 }
 
+# 🎒 Fractional Knapsack – Strategi Greedy untuk Nilai Maksimal
+
+> *"Kadang, membawa setengah batangan emas lebih baik daripada tidak membawa sama sekali."*
+
+---
+
+## 📌 Apa itu Fractional Knapsack?
+
+**Fractional Knapsack** adalah varian dari masalah knapsack (ransel) di mana kamu **boleh mengambil sebagian dari suatu barang** untuk memaksimalkan total nilai yang dibawa, tanpa melebihi kapasitas tas.
+
+Berbeda dari versi 0/1 (yang hanya memperbolehkan mengambil barang secara utuh), di sini kamu bisa ambil setengah, sepertiga, atau berapa pun yang muat dalam kapasitas yang tersedia.
+
+---
+
+## 🎯 Tujuan Masalah
+
+Kita memiliki:
+- Sebuah tas dengan **kapasitas terbatas** (misalnya 50 kg)
+- Sekumpulan barang, masing-masing punya **berat dan nilai**
+
+Tugas kita:
+- Memilih barang atau bagian dari barang untuk dimasukkan ke tas
+- Memaksimalkan **total nilai** dari barang-barang tersebut
+
+---
+
+## ⚙️ Strategi Penyelesaian
+
+Masalah ini diselesaikan dengan pendekatan **algoritma greedy**, yaitu:
+1. Hitung **rasio nilai per berat** dari setiap barang (`value / weight`)
+2. Urutkan barang berdasarkan rasio tersebut (dari yang tertinggi)
+3. Ambil barang dari yang paling menguntungkan hingga kapasitas habis
+4. Jika tidak muat seluruhnya, ambil **sebagian proporsional** dari sisanya
+
+---
+
+## 💡 Ilustrasi Sederhana
+
+Misalnya kamu punya:
+- Barang A: 10 kg, Rp60
+- Barang B: 20 kg, Rp100
+- Barang C: 30 kg, Rp120
+
+Kamu hanya punya kapasitas 50 kg. Dengan strategi greedy, kamu akan:
+- Ambil A (penuh) → 10 kg
+- Ambil B (penuh) → 20 kg
+- Ambil C (sebagian: 20/30) → 20 kg
+- Total nilai: **Rp240**
+
+---
+
+## 🧠 Kenapa Penting?
+
+- Digunakan dalam pengambilan keputusan optimal
+- Konsep dasar untuk alokasi sumber daya terbatas
+- Cocok untuk dipelajari saat memahami algoritma greedy
+
+---
+
+## ⏱️ Kompleksitas Waktu
+
+- **O(n log n)** – karena proses pengurutan berdasarkan rasio
+- Efisien untuk kasus besar jika dibandingkan dengan 0/1 knapsack
+
+---
+
+## 🖋️ Catatan Akhir
+
+Fractional Knapsack adalah pengantar yang bagus untuk memahami konsep greedy. Tidak semua masalah bisa diselesaikan dengan pendekatan ini, tapi ketika bisa—hasilnya sangat optimal dan elegan.
+
+---
