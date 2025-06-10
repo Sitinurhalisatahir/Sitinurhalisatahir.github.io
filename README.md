@@ -208,16 +208,10 @@ Hasilnya: simbol `E` akan punya kode paling pendek, dan `A` paling panjang. Tota
 
 ---
 
----
-title: "N-Queens Problem"
-date: 2025-06-10 00:00:)) +0800
-categories: [Kelompok 4]
-tags: [Kelompok 4]
----
 
 ### 👑 N-Queens Problem – Algoritma Backtracking dalam Penempatan Optimal
 
-*"Satu ratu per baris, satu langkah ke solusi."*
+**"Satu ratu per baris, satu langkah ke solusi."**
 
 ---
 
@@ -302,9 +296,9 @@ Masalah ini termasuk **Constraint Satisfaction Problem (CSP)**, di mana kita har
 
 ## 🧩 Contoh Masalah
 
-```text
-S = [3, 34, 4, 12, 5, 2]
-Target = 9 → ✅ Ya (karena 4 + 5 = 9)
+## text
+- S = [3, 34, 4, 12, 5, 2]
+- Target = 9 → ✅ Ya (karena 4 + 5 = 9)
 
 Target = 30 → ❌ Tidak ada kombinasi yang cocok
 
@@ -458,7 +452,7 @@ Langkah-langkah utama dalam algoritma DFS:
 - Kembali (backtrack) dan telusuri jalur lainnya.
 
 ## Visualisasi Graf
-Graf yang digunakan dalam studi kasus:
+**Graf yang digunakan dalam studi kasus:**
     A
    / \
   B   C
