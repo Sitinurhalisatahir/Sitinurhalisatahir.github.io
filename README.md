@@ -1,43 +1,81 @@
-# Chirpy Starter
+# 🗂️ Activity Selection Problem (ASP)
 
-[![Gem Version](https://img.shields.io/gem/v/jekyll-theme-chirpy)][gem]&nbsp;
-[![GitHub license](https://img.shields.io/github/license/cotes2020/chirpy-starter.svg?color=blue)][mit]
+**Solusi optimal untuk penjadwalan aktivitas tanpa konflik waktu menggunakan pendekatan _Greedy Algorithm_**
 
-When installing the [**Chirpy**][chirpy] theme through [RubyGems.org][gem], Jekyll can only read files in the folders
-`_data`, `_layouts`, `_includes`, `_sass` and `assets`, as well as a small part of options of the `_config.yml` file
-from the theme's gem. If you have ever installed this theme gem, you can use the command
-`bundle info --path jekyll-theme-chirpy` to locate these files.
+---
 
-The Jekyll team claims that this is to leave the ball in the user’s court, but this also results in users not being
-able to enjoy the out-of-the-box experience when using feature-rich themes.
+## 📌 Deskripsi
 
-To fully use all the features of **Chirpy**, you need to copy the other critical files from the theme's gem to your
-Jekyll site. The following is a list of targets:
+Activity Selection Problem (ASP) adalah masalah optimasi yang bertujuan untuk memilih sebanyak mungkin aktivitas dari sebuah daftar, dengan syarat **tidak ada aktivitas yang saling tumpang tindih**.
 
-```shell
-.
-├── _config.yml
-├── _plugins
-├── _tabs
-└── index.html
-```
+Masalah ini sering dijumpai dalam berbagai skenario nyata:
+- 📅 Penjadwalan ruang kelas
+- 💼 Jadwal wawancara kerja
+- 🛠️ Pengelolaan mesin atau sumber daya
 
-To save you time, and also in case you lose some files while copying, we extract those files/configurations of the
-latest version of the **Chirpy** theme and the [CD][CD] workflow to here, so that you can start writing in minutes.
+---
 
-## Usage
+## 💡 Algoritma yang Digunakan
 
-Check out the [theme's docs](https://github.com/cotes2020/jekyll-theme-chirpy/wiki).
+ASP diselesaikan menggunakan **Greedy Algorithm**, yakni strategi yang mengambil keputusan terbaik secara lokal pada setiap langkah untuk mencapai hasil global yang optimal.
 
-## Contributing
+### Kenapa Greedy?
+- Memilih aktivitas yang selesai lebih awal memberi ruang lebih banyak untuk aktivitas lainnya.
+- Efisien dan mudah diimplementasikan.
 
-This repository is automatically updated with new releases from the theme repository. If you encounter any issues or want to contribute to its improvement, please visit the [theme repository][chirpy] to provide feedback.
+---
 
-## License
+## 🛠️ Langkah Penyelesaian
 
-This work is published under [MIT][mit] License.
+1. **Urutkan aktivitas berdasarkan waktu selesai (meningkat).**
+2. **Pilih aktivitas pertama** (yang selesai paling cepat).
+3. Untuk setiap aktivitas berikutnya:
+   - Pilih jika waktu mulai ≥ waktu selesai aktivitas terakhir yang dipilih.
+4. Ulangi sampai akhir.
 
-[gem]: https://rubygems.org/gems/jekyll-theme-chirpy
-[chirpy]: https://github.com/cotes2020/jekyll-theme-chirpy/
-[CD]: https://en.wikipedia.org/wiki/Continuous_deployment
-[mit]: https://github.com/cotes2020/chirpy-starter/blob/master/LICENSE
+---
+
+## 🧪 Contoh
+
+| Aktivitas | Mulai | Selesai |
+|-----------|-------|---------|
+| A         | 1     | 4       |
+| B         | 3     | 5       |
+| C         | 0     | 6       |
+| D         | 5     | 7       |
+| E         | 8     | 9       |
+| F         | 5     | 9       |
+
+✔️ Hasil optimal: **A, D, E**  
+📈 Total aktivitas terpilih: **3**
+
+---
+
+## 💻 Implementasi
+
+Kode berikut adalah contoh implementasi ASP dalam bahasa C++:
+
+```cpp
+struct Activity {
+    int start, finish;
+};
+
+bool compare(Activity a1, Activity a2) {
+    return a1.finish < a2.finish;
+}
+
+void activitySelection(vector<Activity> &activities) {
+    sort(activities.begin(), activities.end(), compare);
+
+    cout << "Aktivitas terpilih:\n";
+    int lastFinish = activities[0].finish;
+    cout << "[Start: " << activities[0].start << ", Finish: " << activities[0].finish << "]\n";
+
+    for (int i = 1; i < activities.size(); i++) {
+        if (activities[i].start >= lastFinish) {
+            cout << "[Start: " << activities[i].start << ", Finish: " << activities[i].finish << "]\n";
+            lastFinish = activities[i].finish;
+        }
+    }
+}
+
