@@ -78,11 +78,11 @@ void activitySelection(vector<Activity> &activities) {
         }
     }
 }
+
 ---
 
 # 🎒 Fractional Knapsack – Strategi Greedy untuk Nilai Maksimal
-
-> *"Kadang, membawa setengah batangan emas lebih baik daripada tidak membawa sama sekali."*
+*"Kadang, membawa setengah batangan emas lebih baik daripada tidak membawa sama sekali."*
 
 ---
 
