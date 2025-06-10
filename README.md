@@ -78,6 +78,7 @@ void activitySelection(vector<Activity> &activities) {
         }
     }
 }
+---
 
 # 🎒 Fractional Knapsack – Strategi Greedy untuk Nilai Maksimal
 
