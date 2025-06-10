@@ -352,7 +352,7 @@ Metode ini efisien dalam eksplorasi jalur dan banyak digunakan dalam:
 
 ## 📋 Contoh Labirin
 
-```text
+## text
 1 0 0 0
 1 1 0 0
 0 1 1 0
@@ -362,7 +362,7 @@ Metode ini efisien dalam eksplorasi jalur dan banyak digunakan dalam:
 
 ### 🌐 Breadth-First Search (BFS) – Menjelajahi Graf Secara Bertahap
 
-> *"Jelajahi dunia, satu level dalam satu waktu."*
+> **"Jelajahi dunia, satu level dalam satu waktu."**
 
 ---
 
@@ -556,7 +556,7 @@ Untuk tiap tetangganya:
 - ika semua node selesai diproses, berarti graf valid
 - Jika tidak → terdapat siklus
 
-Contoh Soal
+## Contoh Soal
 Graf:
 1 → 2  
 2 → 3  
@@ -605,7 +605,7 @@ Dijkstra’s termasuk dalam kategori Greedy Algorithm (Algoritma Rakus), karena 
 ## Tujuan Dijkstra's Algorithm
 Tujuan utama algoritma ini adalah untuk menentukan jalur terpendek dari satu simpul awal ke simpul lainnya dalam graf berbobot positif.
 
-Contohnya:
+## Contohnya:
 Menentukan rute tercepat, termurah, atau paling efisien dari titik A ke titik B.
 
 ## Kegunaan Dijkstra's Algorithm dalam Kehidupan Nyata
