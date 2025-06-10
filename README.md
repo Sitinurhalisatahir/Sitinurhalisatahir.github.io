@@ -61,31 +61,6 @@ Jumlah maksimal: **3 aktivitas**
 
 ---
 
-## 💻 Implementasi (C++)
-
-```cpp
-struct Activity {
-    int start, finish;
-};
-
-bool compare(Activity a1, Activity a2) {
-    return a1.finish < a2.finish;
-}
-
-void activitySelection(vector<Activity> &activities) {
-    sort(activities.begin(), activities.end(), compare);
-    
-    cout << "Aktivitas terpilih:\n";
-    int lastFinish = activities[0].finish; 
-    cout << "[Start: " << activities[0].start << ", Finish: " << activities[0].finish << "]\n";
-    
-    for (int i = 1; i < activities.size(); i++) {
-        if (activities[i].start >= lastFinish) {
-            cout << "[Start: " << activities[i].start << ", Finish: " << activities[i].finish << "]\n";
-            lastFinish = activities[i].finish;
-        }
-    }
-}
 
 ### 🎒 Fractional Knapsack – Strategi Greedy untuk Nilai Maksimal
 
